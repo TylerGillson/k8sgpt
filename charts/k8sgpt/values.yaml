@@ -4,7 +4,6 @@ deployment:
   env:
     model: ""
     backend: "openai" # one of: [ openai | llama ]
-    baseUrl: ""
   resources:
     limits:
       cpu: "1"

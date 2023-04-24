@@ -34,8 +34,6 @@ spec:
           value: {{ .Values.deployment.env.model }}
         - name: K8SGPT_BACKEND
           value: {{ .Values.deployment.env.backend }}
-        - name: K8SGPT_BASEURL
-          value: {{ .Values.deployment.env.baseUrl }}
         {{- if .Values.secret.enabled }}
         - name: K8SGPT_PASSWORD
           valueFrom:
