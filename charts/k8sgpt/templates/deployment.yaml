@@ -3,6 +3,10 @@ kind: Deployment
 metadata:
   name: {{ template "k8sgpt.fullname" . }}
   namespace: {{ .Release.Namespace | quote }}
+  {{- if .Values.deployment.annotations }}
+  annotations:
+  {{- toYaml .Values.deployment.annotations | nindent 4 }}
+  {{- end }}
   labels:
     {{- include "k8sgpt.labels" . | nindent 4 }}
 spec:
